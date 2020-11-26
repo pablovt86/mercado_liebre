@@ -1,0 +1,36 @@
+:root {
+    --color-amarillo: #EAC926;
+    --color-grisclaro: #ebebeb;
+    --color-grisoscuro: #666666;
+    --color-azul: #03264c;
+    --color-verde: #39b54a;
+    --color-celeste: #1259c3;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+section.container {
+    width: 650px;
+    background: rgb(0, 0, 0, 5);
+    border: 2px solid white;
+    opacity: 0.5;
+    margin-top: 100px;
+}
+
+.container label {
+    color: white;
+}
+
+.container h1 {
+    color: white;
+}
