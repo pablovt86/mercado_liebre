@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resultadosCel</title>
+</head>
+
+<body>
+    <h1>listado de usuarios</h1>
+    <% for(let i = 0; i <users.length; i++) {%>
+        <li>
+            <a href="/users/detalle/<%= users[i].id %> ">
+                <%=users[i].nombre%>
+            </a>
+            <form method="POST" action="/users/delete/<%= users[i].id %>?_method=Delete">
+                <button>Delete</button>
+            </form>
+        </li>
+        <% } %>
+            <form action="/users/search" method="GET">
+                <input type="text" name="search">
+                <input type="submit" value="search">
+            </form>
+</body>
+
+</html>

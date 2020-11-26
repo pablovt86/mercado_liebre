@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resultadosCel</title>
+</head>
+
+<body>
+
+    <h1>search</h1>
+    <% for(let i = 0; i <resultadosUsers.length; i++) {%>
+        <li>
+            <a href="/users/detalle/<%= resultadosUsers[i].id %> ">
+                <%=resultadosUsers[i].nombre%>
+            </a>
+        </li>
+        <% } %>
+            <form action="/users/search" method="GET">
+                <input type="text" name="search">
+                <input type="submit" value="search">
+            </form>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include('partials/head') %>
+
+    <body>
+        <%-include('partials/header') %>
+            <div class="container">
+                <section class="perfilUsuario">
+                    <div class="row perfil">
+                        <div class="titulo col-12">
+                            <h2>
+                                <%= title %>
+                            </h2>
+
+                        </div>
+                        <div class="col-12">
+                            <div class="contenido">
+
+                                <ul class="nav nav-tabs " id="myTab" role="tablist">
+                                    <li class="nav-item " role="presentation">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#datos" role="tab" aria-controls="home" aria-selected="true">Mis Datos</a>
+                                    </li>
+                                    <li class="nav-item " role="presentation">
+                                        <a class="nav-link " id="profile-tab" data-toggle="tab" href="#productos" role="tab" aria-controls="profile" aria-selected="false">Mis Productos</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade" id="datos" role="tabpanel" aria-labelledby="home-tab">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum."
+                                    </div>
+                                    <div class="tab-pane fade show active" id="productos" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row productos p-4">
+                                            <% productos.forEach(producto =>{ %>
+                                                <div class="col-12 col-md-3 col-xl-2">
+                                                    <div class="contenido">
+                                                        <figure>
+                                                            <a href="./detail/<%= producto.id %> "><img src="/images/products/ <%=producto.image %>" alt=""></a>
+                                                        </figure>
+
+                                                        <% if (producto.name.length >20) { %>
+                                                            <p>
+                                                                <%- producto.name.slice(0,20) + "..." %>
+                                                            </p>
+                                                            <% } %>
+
+                                                                <div class="d-flex justify-content-around">
+                                                                    <form action="/products/show/" <%=producto.id %> method="get">
+                                                                        <button class="btn-btn-outline-ligth"><h4 class="fas fa-info-circle text-info"></h4></button>
+                                                                    </form>
+                                                                    <form action="/products/edit/<%= producto.id %> " method="get">
+                                                                        <button class="btn-btn-outline-light"><h4 class="fas fa-edit text-primary"></h4>
+
+                                                                    </button>
+                                                                    </form>
+                                                                    <form action="/products/delete/<%=producto.id  %>?_method-DELETE " method="post">
+                                                                        <button class="btn-btn-outline-light"><h4 class="fas fa-trash-alt text-danger"></h4>
+
+                                                                </button>
+                                                                    </form>
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                                <% }) %>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <%-include('partials/footer') %>
+
+    </body>
+
+</html>

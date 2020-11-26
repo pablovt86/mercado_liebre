@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+
+    <!-- 
+                Esta es una practica para un formulario de registro básico usando HTML, CSS, Bootstrap 4 y JavaScript
+                Autor: Elvis Briceño
+            -->
+    <title>editar registro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/register.css">
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+    <% userToEdit %>
+        <article>
+            <section class="container">
+                <h1 class="h2 text-center my-3">editar registro de
+                    <%= userToEdit.nombre %>
+                </h1>
+                <form method="POST" action="/users/edit?_method=PUT">
+                    <fieldset>
+                        <legend class="h4 text-center">
+                            Datos Personales
+                        </legend>
+                        <div class="form-group col-12">
+                            <label>Nombre</label>
+                            <input type="text" id="nombre" name="nombre" value="<%= userToEdit.nombre %> " class="form-control col-lg-8 col-sm-8 col-xs-12">
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Apellido</label>
+                            <input type="text" id="apellido" name="apellido" value="<%= userToEdit.apellido %> " class="form-control col-lg-8 col-sm-8 col-xs-12">
+                        </div>
+
+                        <div class="form-group text-center col-12">
+                            <input type="submit" id="envio" value="Editar" class="btn btn-primary ">
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </article>
+
+
+
+        <!-- Script para bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+
+</body>
+
+</html>
